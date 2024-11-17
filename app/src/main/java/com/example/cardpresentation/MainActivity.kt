@@ -80,9 +80,9 @@ fun BusinessCard() {
             ContactItem(icon = R.drawable.ic_email, text = "jen.doe@android.com")
         }
         Spacer(modifier = Modifier.height(32.dp))
-        Button(onClick = { println("Mensaje mostrado al presionar el botón") }) {
-            Text(text = "Presiona aquí")
-        }
+Button(onClick = { println("Mensaje de branch-A") }) {
+    Text(text = "Presiona aquí - A")
+}
     }
 }
 
