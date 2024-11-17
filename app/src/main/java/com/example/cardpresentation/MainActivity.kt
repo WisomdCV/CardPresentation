@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,7 +44,6 @@ fun BusinessCard() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
-            modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
@@ -70,29 +68,28 @@ fun BusinessCard() {
         }
         Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.Start
         ) {
-            ContactInfo(icon = R.drawable.ic_phone, text = "+11 (123) 444 555 666")
+            ContactItem(icon = R.drawable.ic_phone, text = "+11 (123) 444 555 666")
             Spacer(modifier = Modifier.height(8.dp))
-            ContactInfo(icon = R.drawable.ic_share, text = "@AndroidDev")
+            ContactItem(icon = R.drawable.ic_social, text = "@AndroidDev")
             Spacer(modifier = Modifier.height(8.dp))
-            ContactInfo(icon = R.drawable.ic_email, text = "jen.doe@android.com")
+            ContactItem(icon = R.drawable.ic_email, text = "jen.doe@android.com")
         }
     }
 }
 
 @Composable
-fun ContactInfo(icon: Int, text: String) {
+fun ContactItem(icon: Int, text: String) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Start,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Icon(
+        Image(
             painter = painterResource(id = icon),
             contentDescription = null,
-            tint = Color.Black,
-            modifier = Modifier.size(24.dp)
+            modifier = Modifier.size(24.dp),
+            contentScale = ContentScale.Fit
         )
         Spacer(modifier = Modifier.width(16.dp))
         Text(
