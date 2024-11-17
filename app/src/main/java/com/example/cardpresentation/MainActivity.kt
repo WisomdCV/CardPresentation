@@ -39,8 +39,8 @@ fun BusinessCard() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.SpaceBetween,
+            .padding(24.dp),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
@@ -49,31 +49,33 @@ fun BusinessCard() {
             Image(
                 painter = painterResource(id = R.drawable.android_logo),
                 contentDescription = null,
-                modifier = Modifier.size(100.dp),
+                modifier = Modifier.size(120.dp),
                 contentScale = ContentScale.Crop
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = "Jennifer Doe",
-                fontSize = 24.sp,
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black
             )
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "Android Developer Extraordinaire",
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.Medium,
                 color = Color(0xFF388E3C)
             )
         }
+        Spacer(modifier = Modifier.height(48.dp))
         Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.Start
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             ContactItem(icon = R.drawable.ic_phone, text = "+11 (123) 444 555 666")
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             ContactItem(icon = R.drawable.ic_social, text = "@AndroidDev")
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             ContactItem(icon = R.drawable.ic_email, text = "jen.doe@android.com")
         }
     }
@@ -83,6 +85,7 @@ fun BusinessCard() {
 fun ContactItem(icon: Int, text: String) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxWidth()
     ) {
         Image(
@@ -91,10 +94,10 @@ fun ContactItem(icon: Int, text: String) {
             modifier = Modifier.size(24.dp),
             contentScale = ContentScale.Fit
         )
-        Spacer(modifier = Modifier.width(16.dp))
+        Spacer(modifier = Modifier.width(20.dp))
         Text(
             text = text,
-            fontSize = 14.sp,
+            fontSize = 16.sp,
             fontWeight = FontWeight.Normal,
             color = Color.Black
         )
