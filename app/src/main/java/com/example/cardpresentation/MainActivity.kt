@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -77,6 +78,10 @@ fun BusinessCard() {
             ContactItem(icon = R.drawable.ic_social, text = "@AndroidDev")
             Spacer(modifier = Modifier.height(16.dp))
             ContactItem(icon = R.drawable.ic_email, text = "jen.doe@android.com")
+        }
+        Spacer(modifier = Modifier.height(32.dp))
+        Button(onClick = { println("Mensaje mostrado al presionar el botón") }) {
+            Text(text = "Presiona aquí")
         }
     }
 }
